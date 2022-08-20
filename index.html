@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="quiz-over-modal1">
+      <div class="content">
+        <h1>Quiz завершено!</h1>
+        <h2>Вітання чемпіону! &#9734;Чудове знання астрономії!&#9732;</h2>
+        <p>Ви відповіли на <span id="correct-answer1"></span> з <span id="number-of-all-questions-1"></span> питань</p>
+        <button id="btn-try-again1">Спробувати ще</button>
+      </div>
+    </div>
+    <div class="quiz-over-modal2">
+      <div class="content">
+        <h1>Quiz завершено!</h1>
+        <h2>Непогано, але можна і краще! Космос ближче, ніж здається &#9787;</h2>
+        <p>Ви відповіли на <span id="correct-answer2"></span> з <span id="number-of-all-questions-2"></span> питань</p>
+        <button id="btn-try-again2">Спробувати ще</button>
+      </div>
+    </div>
+    <div class="quiz-over-modal3">
+      <div class="content">
+        <h1>Quiz завершено!</h1>
+        <h2>Поки що результат не космічний. Per aspera ad astra ;)</h2>
+        <p>Ви відповіли на <span id="correct-answer3"></span> з <span id="number-of-all-questions-3"></span> питань</p>
+        <button id="btn-try-again3">Спробувати ще</button>
+      </div>
+    </div>
+    <div class="quiz-over-modal4">
+      <div class="content">
+        <h1>Quiz завершено!</h1>
+        <h2>Ну як же так... Жодної правильної відповіді. &#9785;Сьогодні просто не твій день ;)</h2>
+        <p>Ви відповіли на <span id="correct-answer4"></span> з <span id="number-of-all-questions-4"></span> питань</p>
+        <button id="btn-try-again4">Спробувати ще</button>
+      </div>
+    </div>
+    <div class="quiz-container">
+      <div class="question-number">
+        <h3>
+          Питання
+          <span id="number-of-question"></span>
+          з
+          <span id="number-of-all-questions"></span>
+        </h3>
+      </div>
+      <div id="question"></div>
+      <div class="options">
+        <div data-id="0" class="option option1" id="option1"></div>
+        <div data-id="1" class="option option2" id="option2"></div>
+        <div data-id="2" class="option option3" id="option3"></div>
+        <div data-id="3" class="option option4" id="option4"></div>
+      </div>
+      <div class="button">
+        <button id="btn-next">Далі</button>
+      </div>
+      <div id="answers-tracker"></div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
