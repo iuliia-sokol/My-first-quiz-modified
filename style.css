@@ -45,9 +45,6 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
   position: absolute;
 }
 
-.planet-container{
-
-}
 .planet{
   position: absolute;
   top: 400px; 
@@ -80,7 +77,6 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
 .comet-container {
   position: absolute;
   animation: comet 25s linear infinite;
-  /* animation-delay: 5s; */
  top: 220px;
   right: 100px;
   z-index: -1;
@@ -93,23 +89,40 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
 .ufo{
   left:40px;
   position: absolute;
-  animation: ufo 25s linear infinite;
+  animation: ufo 35s linear infinite;
 }
 
 @keyframes ufo {
   0%{
-    transform: scale(0.5);
+    transform: scale(0.3);
   }
-  20%, 50%, 75% {
+  10%, 20%, 30% {
     transform: scale(0.8) rotate(360deg);
   }
-  50% {
-    transform: translateX(50px) translateY(20px);
+  20% {
+    transform: translateX(50px) translateY(20px) scale(0.7);
   }
-  100% {
+   40% {
+    transform: translateX(50px) translateY(20px) scale(0.5);
+  }
+    50% {
      transform: scale(0.1);
   }
-  
+    60% {
+     transform: scale(0);
+  }
+    70% {
+     transform: scale(0);
+  }
+    80% {
+     transform: scale(0);
+  }
+    90% {
+     transform: scale(0);
+  }
+   100% {
+     transform: scale(0);
+  }
 }
 
 @keyframes comet {
