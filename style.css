@@ -1,37 +1,30 @@
 body {
   position: relative;
   margin: 0;
-background-image: url("./images/comet.png"),
-url("./images/saturn.png"),
+background-image: 
     url("./images/milky-way-bg.jpg");
-
-  background-size: 80px, 160px,  cover;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top 120px right 130px, top 400px right 100px,  
-    center;
-
+  background-position: center;
   font-family: sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
+
+
 .earth-container{
   position: absolute;
    bottom: calc(30% - 150px);
     left: calc(18% - 150px);
-
 }
+
 .earth{
   width: 150px;
  border-radius: 50%;
 box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
-  animation: earth 10s ease-in-out infinite;
-/* bottom: 60px;
- left: 120px; */
- /* animation: earth;
- animation-duration: 15s;
-   animation-iteration-count: infinite; */
+  animation: earth 20s ease-in-out infinite;
 }
 
 .rocket-container {
@@ -41,53 +34,155 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
   pointer-events: none;
   transform-origin: 25px;
   width: 50px;
-
 }
+
 .rocket {
   position: absolute;
   top: 300px;
-   left: 320px;
-  width: 40px;
-  height: 50px;
+  left: 320px;
   transform: translateX(-160px) translateY(-160px);
-  width: 50px;
+  width: 70px;
   position: absolute;
-
 }
 
-.ufo {
+.planet-container{
+
+}
+.planet{
+  position: absolute;
+  top: 400px; 
+  right: 100px;
+  animation: saturn 70s linear infinite;
+}
+
+.satellite {
   position: absolute;
   top: 300px;
-   right: 50px;
-   animation: ufo;
+  right: 50px;
+  animation: satellite;
   animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
-  
 }
+
 .austronaut-container {
   position: absolute;
  bottom: calc(30% - 110px);
     left: calc(18% - 110px);
     animation: austronaut 30s linear infinite;
 }
+
 .austronaut {
   transform: translateX(-90px) translateY(-90px);
-  width: 70px;
- 
+  width: 50px;
 }
+
+.comet-container {
+  position: absolute;
+  animation: comet 25s linear infinite;
+  /* animation-delay: 5s; */
+ top: 220px;
+  right: 100px;
+  z-index: -1;
+}
+
+.comet {
+  position: absolute;
+  transform: translateX(-90px) translateY(-300px);
+}
+.ufo{
+  left:40px;
+  position: absolute;
+  animation: ufo 25s linear infinite;
+}
+
+@keyframes ufo {
+  0%{
+    transform: scale(0.5);
+  }
+  20%, 50%, 75% {
+    transform: scale(0.8) rotate(360deg);
+  }
+  50% {
+    transform: translateX(50px) translateY(20px);
+  }
+  100% {
+     transform: scale(0.1);
+  }
+  
+}
+
+@keyframes comet {
+   0%{
+    transform:rotate(-10deg) scale(0.9);
+  }
+  10% {
+    transform: rotate(-90deg) scale(0.5);
+  }
+  20%{
+    transform:rotate(-180deg) scale(0.4);
+  }     
+  30%{
+    transform:rotate(-270deg) scale(0.2);
+  }
+  40% {
+    transform:rotate(-360deg) scale(0);
+  }
+  50% {
+    transform:rotate(-360deg) scale(0);
+  }
+  60% {
+    transform:rotate(-360deg) scale(0);
+  }
+  70% {
+    transform:rotate(-360deg) scale(0);
+  }
+  80% {
+    transform:rotate(-360deg) scale(0);
+  }
+  90% {
+    transform:rotate(-360deg) scale(0);
+  }
+  100% {
+    transform:rotate(-360deg) scale(0);
+  }
+  }
+  
+
 @keyframes earth {
   0% {
     transform: scale(1);
+  
   }
   50% {
     transform: scale(0.8);
+    filter: brightness(70%);
   }
   100% {
     transform: scale(1);
   }
   
 }
+
+@keyframes saturn {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+ filter: brightness(50%) ;
+  }
+  50% {
+    transform: scale(1) rotate(360deg);
+     filter: brightness(100%) hue-rotate(3.142rad);
+  }
+  75% {
+    transform: scale(0.7) rotate(270deg);
+     filter: brightness(100%) hue-rotate(-0.85turn);
+  }
+  100% {
+ transform: scale(0.5) rotate(0deg);
+  filter: brightness(50%) hue-rotate(90deg);
+  }
+}
+
 @keyframes rotate {
   0%{
     transform:rotateZ(0);
@@ -104,7 +199,7 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
   }
 
 
-  @keyframes ufo {
+  @keyframes satellite {
     100% {
       transform: rotate(360deg);
     }
@@ -146,7 +241,8 @@ box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
   margin: 30px auto;
   border-radius: 10px;
   padding: 25px;
-  box-shadow: 0 0 2em 1em rgba(110, 140, 200, .6);
+  box-shadow: 0 0 1em 1em rgba(110, 140, 200, .6);
+  z-index: 100;
 }
 
 .question-number h3 {
